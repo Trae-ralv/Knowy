@@ -1,0 +1,144 @@
+body {
+    margin: 0;
+}
+
+.login-container {
+    width: 28% !important;
+    margin: 50px auto;
+    padding: 20px;
+    background-color: #f8f8f8;
+    border-radius: 8px;
+}
+
+.form-floating input {
+    height: 50px;
+    border-radius: 8px;
+}
+
+form {
+    margin-left: 5%;
+    margin-right: 5%;
+}
+
+/* This centers content vertically and horizontally on the page, even with dynamic widgets (as i used to display error messages)*/
+.content {
+    /*flex: 1; ensures it takes up remaining space*/
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    min-height: 84vh;
+}
+
+
+.navbar-brand img {
+    max-height: 10vh;
+    width: auto;
+}
+
+.btn-primary {
+    background-color: rgb(0, 176, 112) !important;
+    border: none;
+    padding: 0.5rem 3rem;
+    font-size: 1rem;
+    width: 30%;
+}
+
+.btn-primary:hover {
+    background-color: rgb(0, 171, 108) !important;
+}
+
+.btn-primary:disabled {
+    opacity: 30%;
+}
+
+.form-control {
+    border-color: rgb(118, 118, 118) !important;
+    background-color: transparent !important;
+}
+
+/* Overrides the default light blue autofill background in Webkit browsers. The long transition (600,000s) prevents the background from changing, by default the background color is light blue . */
+/*I get from inspect styles, but can clearly understand*/
+input:-webkit-autofill,
+input:-webkit-autofill:focus {
+    transition: background-color 600000s 0s, color 600000s 0s;
+}
+
+/* Ensures autofill background remains transparent in browsers that use the data-autocompleted attribute (e.g., Firefox). */
+input[data-autocompleted] {
+    background-color: transparent !important;
+}
+
+.form-control:focus {
+    border-color: rgb(0, 137, 87) !important;
+    box-shadow: 0 0 0 0.25rem rgba(0, 137, 87, 0.25) !important;
+}
+
+/* Sets the origin point for label scaling/transformations to the top-left corner. */
+.form-floating label {
+    transform-origin: top left;
+    transform: translate(0, 0) scale(1);
+}
+
+.sub-container p a{
+    text-decoration: none;
+    padding: 10px;
+    position: relative !important;
+    border-radius: 8px;
+}
+
+/* Overrides Bootstrap’s default label background and color when an input is focused or filled(after). */
+/*reason why i set the color again is because the default settings set to another color so i had to set back*/
+.form-floating>.form-control-plaintext~label::after,
+.form-floating>.form-control:focus~label::after,
+.form-floating>.form-control:not(:placeholder-shown)~label::after,
+.form-floating>.form-select~label::after {
+    background-color: transparent !important;
+}
+
+/* Customizes Bootstrap’s floating label positioning and background when the input is focused or has content. */
+.form-floating>.form-control-plaintext~label,
+.form-floating>.form-control:focus~label,
+.form-floating>.form-control:not(:placeholder-shown)~label,
+.form-floating>.form-select~label {
+    transform: scale(.85) translateY(-1.7rem) translateX(.15rem) !important;
+    background-color: #f8f9fa;
+    max-height: fit-content;
+}
+
+.link {
+    color: rgb(0, 137, 87);
+    font-weight: bold;
+}
+
+.link:hover {
+    color: rgb(0, 110, 70);
+}
+
+
+.centered-table-container {
+    display: flex;
+    justify-content: center;
+}
+
+.form-control {
+    transition: all 0.3s ease-in-out;
+}
+
+/*Prevent Selection*/
+.prevent-select {
+    -webkit-user-select: none;
+    /* Safari */
+    -ms-user-select: none;
+    /* IE 10 and IE 11 */
+    user-select: none;
+}
+
+.social-button{
+    width: 44% !important;
+    font-size: 13px !important;
+    height: 40px !important;
+    justify-content: center !important;
+    display: flex !important;
+}

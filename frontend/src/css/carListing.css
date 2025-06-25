@@ -1,0 +1,79 @@
+#main-container {
+  width: 85%;
+}
+
+#filter {
+  width: 80%;
+}
+
+.icon {
+  font-size: xx-large;
+  cursor: pointer;
+  color: rgb(0, 137, 87);
+}
+
+.icon:hover {
+  color: rgb(0, 110, 70);
+}
+
+.search-bar {
+  max-width: 90%;
+}
+
+.position-sticky {
+  position: sticky;
+  top: 20px;
+  z-index: 1000;
+  height: calc(100vh - 40px);
+  overflow-y: auto;
+}
+
+.card-img-top {
+  transition: transform 0.3s ease;
+}
+
+.card:hover .card-img-top {
+  transform: scale(1.05);
+}
+
+.card {
+  transition: box-shadow 0.3s ease;
+  overflow: hidden;
+}
+
+.card:hover {
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Custom scrollbar for the sticky sidebar */
+.position-sticky::-webkit-scrollbar {
+  width: 6px;
+}
+
+.position-sticky::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+.position-sticky::-webkit-scrollbar-thumb {
+  background: #888;
+  border-radius: 3px;
+}
+
+.position-sticky::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
+/* Gap between cards */
+.g-4 {
+  --bs-gutter-x: 1.5rem;
+  --bs-gutter-y: 1.5rem;
+}
+
+/* Responsive padding */
+@media (max-width: 768px) {
+  .position-sticky {
+    position: static;
+    height: auto;
+    margin-bottom: 20px;
+  }
+}
