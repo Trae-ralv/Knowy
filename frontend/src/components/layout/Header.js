@@ -42,7 +42,7 @@ function Header({ isAuth, setIsAuth }) {
                                         to="/blog"
                                         className="nav-link d-flex flex-column align-items-center px-3"
                                     >
-                                        <FontAwesomeIcon icon="house" className="fs-5" />
+                                        <FontAwesomeIcon icon="fa-solid fa-layer-group" className="fs-5" />
                                         <span className="small mt-1">Blog</span>
                                     </Link>
                                 </li>

@@ -109,39 +109,56 @@ public class AuthController {
 	    }
 
 	    try {
-	        String userInfoUrl = "https://graph.facebook.com/me?fields=id,name,email&access_token=" + accessToken;
+	        String userInfoUrl = "https://graph.facebook.com/me?fields=id,name,email,picture&access_token=" + accessToken;
 	        RestTemplate restTemplate = new RestTemplate();
 	        Map<String, Object> fbUser = restTemplate.getForObject(userInfoUrl, Map.class);
 
 	        String id = (String) fbUser.get("id");
 	        String email = (String) fbUser.get("email");
 	        String name = (String) fbUser.get("name");
-			if (email == null) {
-				return ResponseEntity.status(HttpStatus.UNAUTHORIZED)
-						.body(Map.of("error", "Email permission is required"));
-			}
 
-			// Find or create user in your DB
-			Optional<UserModel> optionalUser = userRepo.findByEmail(email);
-			UserModel user;
-			if (optionalUser.isPresent()) {
-				user = optionalUser.get();
-			} else {
-				user = new UserModel();
-				user.setEmail(email);
-				user.setName(name);
-				user.setProvider("facebook");
-				userRepo.save(user);
-			}
+	        // Extraction of picture URL from Facebook (MAP to String)
+	        String picture = null;
+	        Object pictureObj = fbUser.get("picture");
+	        if (pictureObj instanceof Map) {
+	            Map<?, ?> pictureMap = (Map<?, ?>) pictureObj;
+	            Object dataObj = pictureMap.get("data");
+	            if (dataObj instanceof Map) {
+	                Map<?, ?> dataMap = (Map<?, ?>) dataObj;
+	                Object urlObj = dataMap.get("url");
+	                if (urlObj instanceof String) {
+	                    picture = (String) urlObj;
+	                }
+	            }
+	        }
 
-			// Generate your own JWT/session token
-			String token = jwtUtil.generateToken(user.getId(), user.getEmail());
+	        if (email == null) {
+	            return ResponseEntity.status(HttpStatus.UNAUTHORIZED)
+	                    .body(Map.of("error", "Email permission is required"));
+	        }
 
-			return ResponseEntity.ok(Map.of("token", token));
-		} catch (Exception e) {
-			e.printStackTrace();
-			return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR)
-					.body(Map.of("error", "Facebook login failed"));
-		}
+	        // Find or create user in your DB
+	        Optional<UserModel> optionalUser = userRepo.findByEmail(email);
+	        UserModel user;
+	        if (optionalUser.isPresent()) {
+	            user = optionalUser.get();
+	        } else {
+	            user = new UserModel();
+	            user.setEmail(email);
+	            user.setName(name);
+	            user.setProvider("facebook");
+	            user.setPicture(picture);
+	            userRepo.save(user);
+	        }
+
+	        // Generate your own JWT/session token
+	        String token = jwtUtil.generateToken(user.getId(), user.getEmail());
+
+	        return ResponseEntity.ok(Map.of("token", token));
+	    } catch (Exception e) {
+	        e.printStackTrace();
+	        return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR)
+	                .body(Map.of("error", "Facebook login failed"));
+	    }
 	}
 }

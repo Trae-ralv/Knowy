@@ -1,0 +1,89 @@
+.weather-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: start;
+    position: sticky;
+}
+
+.temp-condition {
+    align-items: center;
+    display: flex !important;
+}
+
+.weather-card {
+    width: 90%;
+    border: none !important;
+}
+
+.weather-icon {
+    width: 14px;
+    height: 14px;
+}
+
+.weather-badge {
+    padding: 0.4rem 0.6rem !important;
+    font-size: 10px !important;
+    display: flex !important;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.fltemp-weather-badge {
+    width: 65px;
+    background-image: linear-gradient(180deg,  #f4a346cc, #fa7472cc);
+
+}
+
+.uv-weather-badge {
+    width: 45px;
+}
+
+.wind-weather-badge {
+    width: 75px;
+    background-image: linear-gradient(180deg, #ffffff77, #d3d3d377);
+
+}
+
+.hum-weather-badge {
+    width: 55px;
+    background-image: linear-gradient(180deg, #5dcbf0aa, #2f81edaa);
+
+}
+
+.address-text {
+    color: rgb(74, 74, 74);
+    font-weight: bold;
+}
+
+.modal-backdrop{
+    background-color: rgba(0, 0, 0, 0.5) !important;
+}
+
+.blog-card{
+    width: 57%;
+}
+
+.card-header{
+    background-color: white !important;
+}
+
+.main-container {
+    min-height: 84vh;
+}
+
+.blog-post{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.card-title{
+    font-size: 13px;
+    font-weight: bold;
+}
+
+.form-textarea{
+    height: 30rem;
+}
