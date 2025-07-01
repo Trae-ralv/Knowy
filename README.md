@@ -1,5 +1,5 @@
 # Knowy
-Knowy, ABC Condo is a know-your-neighbourhood web application developed as a full-stack project using React.js for the frontend, Spring Boot for the backend, and XAMPP MySQL for the database. This project is designed for educational purposes to demonstrate API integration, secure authentication, and AI-driven features for a community-focused platform.
+Knowy, ABC Condo is a know-your-neighbourhood web application developed as a full-stack project using **React.js** for the frontend, **Spring Boot** for the backend, and **XAMPP MySQL** for the database. This project is designed for educational purposes to demonstrate **API integration, secure authentication,** and **AI-driven features** for a community-focused platform.
 
 ## Project Overview
 The Knowy application provides users with information about their neighborhood, including real-time weather updates, location-based services, and an AI-powered chatbot. Key features include user authentication via Google OAuth 2.0 and Facebook SDK, a blog system, and profile management. The application is built with a three-tier architecture to ensure modularity and scalability.
@@ -30,11 +30,11 @@ Knowy/
 ```
 
 ## Features
-- **Authentication**: Secure login with Google OAuth 2.0 and Facebook SDK.
-- **Location Services**: Display condo and user location with real-time weather updates.
-- **AI Chatbot**: Powered by Gemini API for answering queries and generating blog/image content.
-- **Blog System**: CRUD operations for blog posts with user-specific actions.
-- **Profile Management**: View and update user information.
+- **Authentication🔒**: Secure login with Google OAuth 2.0 and Facebook SDK.
+- **Location Services📍**: Display condo and user location with real-time weather updates.
+- **AI Chatbot, Knowy🤖**: Powered by Gemini API for answering queries and generating blog/image content.
+- **Blog System📝**: CRUD operations for blog posts with user-specific actions.
+- **Profile Management😏**: View and update user information.
 
 ## Prerequisites
 Before setting up the project, ensure you have the following installed:
