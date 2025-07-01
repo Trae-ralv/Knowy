@@ -1,10 +1,10 @@
-# `Knowy`
+# Knowy
 Knowy, ABC Condo is a know-your-neighbourhood web application developed as a full-stack project using React.js for the frontend, Spring Boot for the backend, and XAMPP MySQL for the database. This project is designed for educational purposes to demonstrate API integration, secure authentication, and AI-driven features for a community-focused platform.
 
-## `Project Overview`
+## Project Overview
 The Knowy application provides users with information about their neighborhood, including real-time weather updates, location-based services, and an AI-powered chatbot. Key features include user authentication via Google OAuth 2.0 and Facebook SDK, a blog system, and profile management. The application is built with a three-tier architecture to ensure modularity and scalability.
 
-## `Project Structure`
+## Project Structure
 ```
 Knowy/
 ├── frontend/
@@ -29,14 +29,14 @@ Knowy/
 └── README.md
 ```
 
-## `Features`
+## Features
 - **Authentication**: Secure login with Google OAuth 2.0 and Facebook SDK.
 - **Location Services**: Display condo and user location with real-time weather updates.
 - **AI Chatbot**: Powered by Gemini API for answering queries and generating blog/image content.
 - **Blog System**: CRUD operations for blog posts with user-specific actions.
 - **Profile Management**: View and update user information.
 
-## `Prerequisites`
+## Prerequisites
 Before setting up the project, ensure you have the following installed:
 - **Node.js** (v22.16.0 or later)
 - **npm** (v11.1.0 or later)
@@ -46,7 +46,7 @@ Before setting up the project, ensure you have the following installed:
 - **Visual Studio Code** or **Eclipse STS** (v4.30.0 or later)
 - **Postman** (for API testing)
 
-## `Frontend Setup`
+## Frontend Setup
 ### `Npm Installation`
 Navigate to the `frontend` directory and install the required dependencies:
 
@@ -117,7 +117,7 @@ REACT_APP_CONDO_LOCATION=
 
 Replace placeholders with your API keys and condo address.
 
-## `API Configuration`
+### `API Configuration`
 The application integrates the following APIs:
 - **Google OAuth 2.0**: For user authentication.
 - **Facebook SDK**: For alternative login.
@@ -125,7 +125,7 @@ The application integrates the following APIs:
 - **Google Gemini API**: For AI-driven chatbot and content generation.
 
 
-## `Backend Setup`
+## Backend Setup
 ### `Maven Installation`
 Navigate to the `backend` directory and install the required Maven dependencies for Spring Boot:
 
@@ -171,14 +171,14 @@ facebook.app-secret=
 
 Replace `your_jwt_secret`, `your_google_client_id`, `your_facebook_app_id`, and `your_facebook_app_secret` with appropriate values.
 
-## `Database Setup`
+## Database Setup
 1. Install and start **XAMPP** with MySQL and phpMyAdmin.
 2. Create a database named `knowy_db` in phpMyAdmin.
 3. Ensure the `spring.datasource` properties in `application.properties` match your MySQL configuration.
 4. The schema will be automatically created by Spring Boot with `spring.jpa.hibernate.ddl-auto=update`.
 
 
-## `Running the Application`
+## Running the Application
 1. Start the MySQL server via XAMPP.
 2. Run the backend application (`mvn spring-boot:run`).
 3. Run the frontend application (`npm start`).
@@ -208,15 +208,15 @@ mvn spring-boot:run
 The backend will be accessible at [http://localhost:8080](http://localhost:8080).
 
 
-## `Contributing`
+## Contributing
 This project is for educational purposes. Contributions are not expected, since this is submitted as a project for my Integrated Application Development 😊.
 
-## `References`
+## References
 - [React Documentation](https://react.dev/)
 - [Spring Boot Documentation](https://spring.io/projects/spring-boot)
 - [Google APIs](https://developers.google.com/)
 - [Facebook SDK](https://developers.facebook.com/docs/facebook-login/)
 - [Gemini API](https://ai.google.dev/gemini-api/docs/api-key)
 
-## `License`
+## License
 This project is for educational purposes and not licensed for commercial use.
