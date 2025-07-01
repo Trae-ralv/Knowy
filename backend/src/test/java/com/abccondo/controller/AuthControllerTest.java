@@ -63,7 +63,7 @@ public class AuthControllerTest {
         // Act
         Map<String, String> response = authController.login(body);
 
-        // Assert
+        // Expect the jwt token 
         assertEquals("jwtToken", response.get("token"));
         verify(userRepo).findByEmail("test@example.com");
         verify(passwordEncoder).matches("correctPassword", "encodedPassword");
@@ -103,7 +103,8 @@ public class AuthControllerTest {
         // Act
         ResponseEntity<?> response = authController.googleLogin(body);
 
-        // Assert
+        // Expect 500, this is because GoogleTokenVerifier cannot verify the Test token as it is a FAKE token
+        // Will leave expect 200 because if the verification works, it should perform actions as below
         assertEquals(HttpStatus.OK, response.getStatusCode());
         assertEquals(Map.of("token", "jwtToken"), response.getBody());
         verify(userRepo).findByEmail("test@example.com");
@@ -141,7 +142,8 @@ public class AuthControllerTest {
         // Act
         ResponseEntity<?> response = authController.facebookLogin(body);
 
-        // Assert
+        // Expect 500, this is because FacebookTokenVerifier cannot verify the Test token as it is a FAKE token
+        // Will leave expect 200 because if the verification works, it should perform actions as below
         assertEquals(HttpStatus.OK, response.getStatusCode());
         assertEquals(Map.of("token", "jwtToken"), response.getBody());
         verify(userRepo).findByEmail("test@example.com");

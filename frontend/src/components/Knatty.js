@@ -18,7 +18,7 @@ function Knaty() {
   const chatEndRef = useRef(null);
   const genAI = useRef(null);
   const navigate = useNavigate();
-  const isAuth = localStorage.getItem("isAuth");
+  const token = localStorage.getItem("token");
 
 
   const GEMINI_API_KEY = process.env.REACT_APP_GEMINI_API_KEY;
@@ -63,7 +63,7 @@ function Knaty() {
 
     // Blog Post Generation/Refine (require login)
     if (isPostContentRequest(userMsg)) {
-      if (!isAuth) {
+      if (!token) {
         setMessages((msgs) => [
           ...msgs,
           {
@@ -80,7 +80,7 @@ function Knaty() {
 
     // Image Generation (require login)
     if (isImageRequest(userMsg)) {
-      if (!isAuth) {
+      if (!token) {
         setMessages((msgs) => [
           ...msgs,
           {

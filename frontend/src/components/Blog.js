@@ -161,8 +161,7 @@ function Blog() {
                 const lng = result.geometry.location.lng;
                 setCondoLatLng({ lat, lng });
                 setCondoAddress(result.formatted_address);
-
-                // 2. Get condo weather
+                // 2. Get condo weather 
                 const weatherResp = await axios.get(
                     `https://weather.googleapis.com/v1/currentConditions:lookup?location.latitude=${lat}&location.longitude=${lng}&key=${GOOGLE_API_KEY}`
                 );
@@ -338,6 +337,9 @@ function Blog() {
                         <h5 className="card-title mb-1 fw-bolder">{title}</h5>
                         <div className="card-text small address-text mb-1">
                             {address}
+                        </div>
+                        <div className="card-text small text-muted mb-1">
+                            {latLng.lat}, {latLng.lng}
                         </div>
                         <div className="mb-1 temp-condition">
                             <span className="fw-bold fs-4">{weather.temperature?.degrees}°C</span>
