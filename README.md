@@ -1,4 +1,4 @@
-# `Knowy`
+# Knowy
 Knowy, ABC Condo is a know-your-neighbourhood web application developed as a full-stack project using React.js for the frontend, Spring Boot for the backend, and XAMPP MySQL for the database. This project is designed for educational purposes to demonstrate API integration, secure authentication, and AI-driven features for a community-focused platform.
 
 ## `Project Overview`
