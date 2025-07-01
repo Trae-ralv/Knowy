@@ -56,12 +56,14 @@ public class AuthController {
 
 	@PostMapping("/google")
 	public ResponseEntity<?> googleLogin(@RequestBody Map<String, String> body) {
+		//recieve Google JWT Token from frontend
 		String idTokenString = body.get("idToken");
 		if (idTokenString == null) {
 			return ResponseEntity.badRequest().body(Map.of("error", "Missing idToken"));
 		}
 
 		try {
+			//verify the Google JWT Token
 			GoogleIdTokenVerifier verifier = new GoogleIdTokenVerifier.Builder(new NetHttpTransport(),
 					GsonFactory.getDefaultInstance()).setAudience(Collections.singletonList(googleClientId)).build();
 
@@ -117,7 +119,6 @@ public class AuthController {
 	        String email = (String) fbUser.get("email");
 	        String name = (String) fbUser.get("name");
 
-	        // Extraction of picture URL from Facebook (MAP to String)
 	        String picture = null;
 	        Object pictureObj = fbUser.get("picture");
 	        if (pictureObj instanceof Map) {

@@ -10,6 +10,8 @@ import Terms from './components/Terms';
 import Blog from './components/Blog';
 import Profile from './components/Profile';
 import Footer from './components/layout/Footer';
+import Knatty from "./components/Knatty";
+
 
 function App() {
   const location = useLocation();
@@ -35,6 +37,7 @@ function App() {
         <Route path="/terms" element={<Terms />} />
       </Routes>
       {!['/login', '/register'].includes(location.pathname) && <Footer />}
+      {!['/login', '/register'].includes(location.pathname) && <Knatty />}
     </>
   );
 }

@@ -1,0 +1,66 @@
+.knatty-chatbot {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  z-index: 9999;
+}
+.knatty-toggle {
+  background-color: rgba(0, 0, 0, 0.5);
+  border: none;
+  color: white;
+  border-radius: 50%;
+  width: 56px;
+  height: 56px;
+  font-size: 2rem;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+  cursor: pointer;
+}
+.knatty-chatbox {
+  width: 350px;
+  max-width: 95vw;
+  background: #fff;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 32px rgba(0,0,0,0.2);
+  display: flex;
+  flex-direction: column;
+}
+.knatty-header {
+  font-weight: bold;
+  font-size: 1.1rem;
+  border-bottom: 1px solid #dee2e6;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.knatty-messages {
+  min-height: 70vh;
+  max-height: 70vh;
+  overflow-y: auto;
+  background: #f9f9f9;
+}
+.knatty-bubble {
+  background: #f1f1f1;
+  border-radius: 16px;
+  padding: 10px 14px;
+  max-width: 85%;
+  font-size: 1rem;
+}
+.knatty-bubble.knatty {
+  background: #e3f0fc;
+  color: #0255a6;
+  align-self: flex-start;
+}
+.knatty-bubble.user {
+  background: #d1e7dd;
+  color: #1b4332;
+  align-self: flex-end;
+}
+.knatty-input {
+  display: flex;
+  gap: 8px;
+  background: #fff;
+}
+.knatty-input input {
+  flex: 1;
+}

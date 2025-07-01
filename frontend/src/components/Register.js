@@ -35,8 +35,8 @@ function Register() {
         }
 
         try {
-            await axios.post(`${process.env.REACT_APP_API_URL}/auth/register`, {
-                username: formData.username,
+            await axios.post(`${process.env.REACT_APP_API_URL}/api/auth/register`, {
+                name: formData.name,
                 password: formData.password,
                 email: formData.email
             });
@@ -70,7 +70,7 @@ function Register() {
                                     id="username"
                                     name="username"
                                     placeholder="Username"
-                                    value={formData.username}
+                                    value={formData.name}
                                     onChange={handleChange}
                                     required
                                 />

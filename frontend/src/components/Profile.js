@@ -343,7 +343,7 @@ function Profile() {
                                 <div className="card-header">
                                     <div className="row d-flex align-items-center">
                                         <div className="col-2">
-                                            <img src={post.authorImage || "https://ui-avatars.com/api/?name=" + encodeURIComponent(post.authorName)} alt={post.authorName} style={{ maxHeight: 55, objectFit: "cover" }} />
+                                            <img src={post.authorImage || "https://ui-avatars.com/api/?name=" + encodeURIComponent(post.authorName)} alt={post.authorName} style={{ width: 50, height: 50, objectFit: "cover" }} />
                                         </div>
                                         <div className="col-7 p-0">
                                             <h5>{post.authorName}</h5>

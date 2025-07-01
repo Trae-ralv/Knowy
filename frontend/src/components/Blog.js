@@ -272,6 +272,8 @@ function Blog() {
 
     const weatherGradientMap = {
         SUNNY: 'linear-gradient(135deg, #f9d423, #ff4e50)',
+        MOSTLY_SUNNY: 'linear-gradient(135deg, #f9d423,rgb(252, 156, 76))',
+        PARTLY_SUNNY: 'linear-gradient(135deg, #f9d423,rgb(219, 244, 255))',
         CLEAR: 'linear-gradient(135deg, #56ccf2, #2f80ed)',
         PARTLY_CLOUDY: 'linear-gradient(135deg,rgb(137, 181, 253),rgb(219, 244, 255))',
         MOSTLY_CLOUDY: 'linear-gradient(135deg,rgb(111, 146, 202),rgb(141, 217, 255))',
@@ -288,7 +290,7 @@ function Blog() {
 
     function getWeatherGradient(weather) {
         if (!weather || !weather.weatherCondition) return weatherGradientMap.DEFAULT;
-        const type = weather.weatherCondition.type;
+        const type = weather.weatherCondition.description.text;
         return weatherGradientMap[type] || weatherGradientMap.DEFAULT;
     }
 
@@ -459,7 +461,7 @@ function Blog() {
                                 <div className="card-header">
                                     <div className="row d-flex align-items-center">
                                         <div className="col-2">
-                                            <img src={post.authorImage} alt={post.authorName} style={{ maxHeight: 55, objectFit: "cover" }} />
+                                            <img src={post.authorImage} alt={post.authorName} style={{ width: 50, height: 50, objectFit: "cover" }} />
                                         </div>
                                         <div className="col-7 p-0">
                                             <h5>{post.authorName}</h5>
